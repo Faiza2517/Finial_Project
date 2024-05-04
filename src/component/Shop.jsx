@@ -44,21 +44,6 @@ export const Shop = () => {
             <div class="product-showing-count">
               Showing <span>1–9</span> of <span>10</span> results
             </div>
-            <nav class="pagination-area ms-md-auto mt-3 mt-md-0">
-              <ul class="page-numbers">
-                <li>
-                  <a class="page-number active" href="shop.html">1</a>
-                </li>
-                <li>
-                  <a class="page-number" href="shop.html">2</a>
-                </li>
-                <li>
-                  <a class="page-number next" href="shop.html">
-                    <i class="icon-arrow-right"></i>
-                  </a>
-                </li>
-              </ul>
-            </nav>
           </div>
         </div>
       </div>

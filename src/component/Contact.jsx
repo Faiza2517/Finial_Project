@@ -76,7 +76,7 @@ export const Contact = () => {
       </div>
       <div className='row list'>
         < div className='col-12 col-sm-5'>
-          <div className='container'>
+          <div className='container' style={{padding:'20px'}}>
             <h4 className='contactss' style={{marginTop:'90px'}}></h4>
             <h3 className='contact'>Contact With Us</h3>
             <p style={{ textAlign: 'left' }}>
@@ -130,7 +130,7 @@ export const Contact = () => {
           </div>
         </div>
         {/*start form*/}
-        <div className='col-12 col-sm-7 contact-form' style={{ backgroundColor: '#F1F4F1' }}>
+        <div className='col-12 col-sm-7 contact-form' style={{ backgroundColor: '#F1F4F1' ,padding:'20px'}}>
           <div style={{ padding: '20px', marginTop: '20px', paddingBottom: '84px' }}>
             <h2>Get In Touch</h2>
             <form onSubmit={handleSubmit}>
