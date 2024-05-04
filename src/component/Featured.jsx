@@ -227,20 +227,19 @@ export const Featured = () => {
                                 decreaseQuantity={decreaseQuantity}
                                 products={products}
                             />
-                            <ViewCart
-                                cartItems={cartItems} // Ensure cartItems is not undefined
-                                totalPrice={totalPrice}
-                                removeFromCart={removeFromCart} // Assuming you have this function
-                                increaseQuantity={increaseQuantity} // Assuming you have this function
-                                decreaseQuantity={decreaseQuantity} // Assuming you have this function
-                            />
-
-
                         </div>
                     </div>
                 </div>
             </div>
-
+            <ViewCart
+                cartItems={cartItems}
+                totalPrice={totalPrice}
+                isCartOpen={isCartOpen}
+                removeFromCart={removeFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+                products={products}
+            />
             {/*top catagories*/}
 
             <div class="product-categories-area section-space bg-dark">
@@ -333,6 +332,14 @@ export const Featured = () => {
                     </div>
                 </div>
             </div>
+            <ViewCart
+                cartItems={cartItems}
+                totalPrice={totalPrice}
+                removeFromCart={removeFromCart}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+                products={products}
+            />
         </>
     )
 }

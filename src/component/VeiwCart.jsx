@@ -1,5 +1,6 @@
 import React from 'react';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { Link } from 'react-router-dom'; // Import Link if needed
 import { pic7, pic5, pic6, aboutimg } from '../assets';
 
 export const ViewCart = ({
@@ -8,6 +9,7 @@ export const ViewCart = ({
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
+  products
 }) => {
   return (
     <>
@@ -28,7 +30,7 @@ export const ViewCart = ({
                 </tr>
               </thead>
               <tbody>
-                {cartItems && cartItems.length > 0 && cartItems.map((items, index) => (
+                {cartItems && cartItems.map((item, index) => (
                   <tr key={index}>
                     <td>
                       <button style={{ backgroundColor: 'white', border: 'none' }} onClick={() => removeFromCart(index)}>
@@ -36,20 +38,20 @@ export const ViewCart = ({
                       </button>
                     </td>
                     <td>
-                      <img src={items.image} alt={items.name} style={{ width: '60px', height: '60px' }} />
-                      <span>{items.name}</span>
+                      <img src={item.image} alt={item.name} style={{ width: '60px', height: '60px' }} />
+                      <span>{item.name}</span>
                     </td>
-                    <td>${items.price}</td>
+                    <td>${item.price}</td>
                     <td>
                       <button onClick={() => decreaseQuantity(index)}>-</button>
                       <input
                         type="number"
-                        value={items.quantity}
+                        value={item.quantity}
                         min="1"
                       />
                       <button onClick={() => increaseQuantity(index)}>+</button>
                     </td>
-                    <td>${(items.price * items.quantity)}</td>
+                    <td>${(item.price * item.quantity).toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -65,7 +67,7 @@ export const ViewCart = ({
               <tbody>
                 <tr>
                   <td style={{ textAlign: 'left', padding: '20px' }}>
-                    <p>Subtotal: ${cartItems && cartItems.length > 0 ? cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0) : 0}</p>
+                    <p>Subtotal: ${cartItems && cartItems.length > 0 ? cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2) : 0}</p>
                     <hr />
                     <p>Shipping: $10.00</p>
                     <hr />
