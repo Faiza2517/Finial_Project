@@ -332,14 +332,6 @@ export const Featured = () => {
                     </div>
                 </div>
             </div>
-            <ViewCart
-                cartItems={cartItems}
-                totalPrice={totalPrice}
-                removeFromCart={removeFromCart}
-                increaseQuantity={increaseQuantity}
-                decreaseQuantity={decreaseQuantity}
-                products={products}
-            />
         </>
     )
 }
